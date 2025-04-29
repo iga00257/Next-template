@@ -1,0 +1,58 @@
+{
+  "name": "next-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:dev": "export NEXT_PUBLIC_DEPLOY_ENV=development && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pre-push": "tsc --noEmit",
+    "pre-commit": "npx lint-staged",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js}": [
+      "prettier --write",
+      "next lint --fix --file"
+    ],
+    "**/*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "case": "^1.6.3",
+    "classnames": "^2.5.1",
+    "date-fns": "^4.1.0",
+    "i18next": "^25.0.2",
+    "lodash": "^4.17.21",
+    "next": "15.3.1",
+    "next-i18next": "^15.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.5.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.87.0",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+}

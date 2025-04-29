@@ -1,0 +1,285 @@
+@use '../_variables' as *;
+@use './locale' as *;
+
+@mixin Heading-Bold-XL {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 74px;
+    line-height: 120%;
+  }
+}
+@mixin Heading-Bold-L {
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 120%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 120%;
+  }
+}
+@mixin Heading-Bold-M {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 130%;
+  @include locale($latin-system) {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 120%;
+  }
+}
+@mixin Heading-Bold-S {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 130%;
+  @include locale($latin-system) {
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 120%;
+  }
+}
+
+// desktop-subtitle bold
+@mixin Subtitle-Bold-XL {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Bold-L {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Bold-M {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+// desktop-subtitle regular
+@mixin Subtitle-Regular-XL {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Regular-L {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Regular-M {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+// desktop-subtitle light
+@mixin Subtitle-Light-XL {
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Light-L {
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 130%;
+  }
+}
+@mixin Subtitle-Light-M {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+
+// desktop-body bold
+@mixin Body-Bold-L {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Bold-M {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Bold-S {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Bold-XS {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+
+// desktop-body regular
+@mixin Body-Regular-L {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Regular-M {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+  }
+}
+@mixin Body-Regular-S {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+@mixin Body-Regular-XS {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+@mixin Body-Regular-XXS {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
+
+// desktop-body light
+@mixin Body-Light-L {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Light-M {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+  }
+}
+@mixin Body-Light-S {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+@mixin Body-Light-XS {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+@mixin Body-Light-XXS {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 140%;
+  @include locale($latin-system) {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 130%;
+  }
+}
