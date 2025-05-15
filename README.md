@@ -13,32 +13,40 @@
 - **程式碼規範**: ESLint + Prettier
 - **Git Hooks**: Husky + lint-staged
 
-## 專案特色
+## 專案說明
 
-- 🌐 完整的多國語系支援
+- 🌐 多語系支援
 
   - 支援多語言切換（zh-TW、en 等）
   - URL 語系參數優先
   - i18next 整合
 
-- 🎨 現代化樣式解決方案
+- 🎨 樣式解決方案
 
   - SASS 預處理器
   - CSS Modules
   - 全域變數和 Mixins
 
-- 📦 資源最佳化
+- 📦 Inline svg for icon
 
   - SVG 元件化支援
   - 靜態資源最佳化
   - 字型最佳化
 
 - 🛠 開發工具鏈
+
   - TypeScript 型別檢查
   - ESLint 程式碼檢查
   - Prettier 程式碼格式化
   - Husky Git hooks
   - lint-staged 提交檢查
+
+- 💻 VSCode 擴展支援
+  - ESLint 即時程式碼檢查
+  - Prettier 自動格式化
+  - i18n-ally 多語系開發
+  - Todo Tree 任務標記
+  - Code Spell Checker 拼寫檢查
 
 ## 目錄結構
 
