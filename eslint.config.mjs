@@ -1,22 +1,20 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
+import eslint from '@eslint/js'
+import nextPlugin from '@next/eslint-plugin-next'
+import prettierPlugin from 'eslint-plugin-prettier/recommended'
+import tsEslint from 'typescript-eslint'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const config = [
+  // Base configurations
+  eslint.configs.recommended,
+  tsEslint.configs.recommended,
+  prettierPlugin,
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
-
-const eslintConfig = [
-  // 擴展基礎配置
-
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'),
-
-  // 基本配置
+  // Next.js specific configuration
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      '@next/next': nextPlugin,
+    },
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -31,12 +29,12 @@ const eslintConfig = [
       '@typescript-eslint/no-var-requires': 'off',
       'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
       '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
-      'prettier/prettier': 'error',
+      'prettier/prettier': ['error', {}, { usePrettierrc: true }],
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
 
-  // JavaScript 文件的特殊配置
+  // JavaScript specific configuration
   {
     files: ['**/*.js', '**/*.jsx'],
     rules: {
@@ -45,7 +43,7 @@ const eslintConfig = [
     },
   },
 
-  // next-i18next.config.js 的特殊配置
+  // next-i18next.config.js specific configuration
   {
     files: ['next-i18next.config.js'],
     rules: {
@@ -54,4 +52,4 @@ const eslintConfig = [
   },
 ]
 
-export default eslintConfig
+export default config

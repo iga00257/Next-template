@@ -2,7 +2,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -10,12 +10,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
@@ -23,12 +18,7 @@
   },
   "eslint.experimental.useFlatConfig": true,
   "eslint.run": "onType",
-  "eslint.probe": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
+  "eslint.probe": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "i18n-ally.localesPaths": ["public/locales"],
   "i18n-ally.namespace": true,
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
