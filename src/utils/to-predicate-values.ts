@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type Predicator = (value: any) => any
-type ObjectComparator = (value: any) => boolean
+type Predicator = (value: any) => any;
+type ObjectComparator = (value: any) => boolean;
 
 interface Options {
-  objectComparator?: ObjectComparator
+  objectComparator?: ObjectComparator;
 }
 
 export default function toPredicateValues(
@@ -11,10 +11,11 @@ export default function toPredicateValues(
   predicator: Predicator,
   options: Options = {},
 ): any {
-  const { objectComparator = (value: any) => typeof value === 'object' && value !== null } = options
+  const { objectComparator = (value: any) => typeof value === 'object' && value !== null } =
+    options;
 
   if (Array.isArray(data)) {
-    return data.map((item) => toPredicateValues(item, predicator, options))
+    return data.map((item) => toPredicateValues(item, predicator, options));
   }
 
   if (objectComparator(data)) {
@@ -24,8 +25,8 @@ export default function toPredicateValues(
         [key]: toPredicateValues(data[key], predicator, options),
       }),
       {},
-    )
+    );
   }
 
-  return predicator(data)
+  return predicator(data);
 }

@@ -1,32 +1,38 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useTranslation } from 'next-i18next'
-import classNames from 'classnames/bind'
-import styles from './style.module.scss'
-import { GetStaticProps } from 'next'
-import ArrowIcon from '../assets/icons/arrow.svg'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { fetchPokemon } from '@/api/fetchPokemon'
+import classNames from 'classnames/bind';
+import { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-const cx = classNames.bind(styles)
+import { fetchPokemon } from '@/api/fetchPokemon';
+
+import ArrowIcon from '../assets/icons/arrow.svg';
+import styles from './style.module.scss';
+
+const cx = classNames.bind(styles);
+
+// Move the function outside the component
+const changeLanguage = (router: any, locale: string) => {
+  router.push(router.pathname, router.asPath, { locale });
+};
 
 export default function Home() {
-  const router = useRouter()
-  const { t } = useTranslation('common')
-  const changeLanguage = (locale: string) => {
-    router.push(router.pathname, router.asPath, { locale })
-  }
+  const router = useRouter();
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     const fetchPokemonBerry = async () => {
       const res = await fetchPokemon({
         name: 'oran',
-      })
-      return res
-    }
-    const res = fetchPokemonBerry()
-    console.log('pokemon berry', res)
-  }, [])
+      });
+      return res;
+    };
+    const res = fetchPokemonBerry();
+    console.log('pokemon berry', res);
+  }, []);
+
   return (
     <>
       <Head>
@@ -38,10 +44,10 @@ export default function Home() {
         <div className={cx('title')}>{t('title')}</div>
         <div className={cx('description')}>{t('description')}</div>
         <div className={cx('wrapper')}>
-          <button className={cx('button')} onClick={() => changeLanguage('zh-TW')}>
+          <button className={cx('button')} onClick={() => changeLanguage(router, 'zh-TW')}>
             中文
           </button>
-          <button className={cx('button')} onClick={() => changeLanguage('en')}>
+          <button className={cx('button')} onClick={() => changeLanguage(router, 'en')}>
             English
           </button>
         </div>
@@ -51,12 +57,12 @@ export default function Home() {
         </div>
       </div>
     </>
-  )
+  );
 }
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'zh', ['common'])),
     },
-  }
-}
+  };
+};

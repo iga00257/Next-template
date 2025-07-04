@@ -1,24 +1,24 @@
-import Case from 'case'
+import Case from 'case';
 
-export type CaseType = 'camel' | 'snake' | 'pascal' | 'kebab'
+export type CaseType = 'camel' | 'snake' | 'pascal' | 'kebab';
 
 export const CASES = {
   CAMEL: 'camel' as const,
   SNAKE: 'snake' as const,
   PASCAL: 'pascal' as const,
   KEBAB: 'kebab' as const,
-}
+};
 
 const caseMap = {
   [CASES.CAMEL]: Case.camel,
   [CASES.SNAKE]: Case.snake,
   [CASES.PASCAL]: Case.pascal,
   [CASES.KEBAB]: Case.kebab,
-}
+};
 
 export function transformKeys(data: any, caseType: CaseType): any {
   if (Array.isArray(data)) {
-    return data.map((item) => transformKeys(item, caseType))
+    return data.map((item) => transformKeys(item, caseType));
   }
 
   if (
@@ -33,8 +33,8 @@ export function transformKeys(data: any, caseType: CaseType): any {
         [caseMap[caseType](key)]: transformKeys(data[key], caseType),
       }),
       {},
-    )
+    );
   }
 
-  return data
+  return data;
 }

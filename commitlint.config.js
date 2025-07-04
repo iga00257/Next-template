@@ -19,4 +19,4 @@ module.exports = {
     'type-empty': [2, 'never'], // 類型不能為空
     'subject-empty': [2, 'never'], // 描述不能為空
   },
-}
+};

@@ -16,25 +16,21 @@
 ## 專案說明
 
 - 🌐 多語系支援
-
   - 支援多語言切換（zh-TW、en 等）
   - URL 語系參數優先
   - i18next 整合
 
 - 🎨 樣式解決方案
-
   - SASS 預處理器
   - CSS Modules
   - 全域變數和 Mixins
 
 - 📦 Inline svg for icon
-
   - SVG 元件化支援
   - 靜態資源最佳化
   - 字型最佳化
 
 - 🛠 開發工具鏈
-
   - TypeScript 型別檢查
   - ESLint 程式碼檢查
   - Prettier 程式碼格式化

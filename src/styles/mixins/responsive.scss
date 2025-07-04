@@ -44,26 +44,26 @@ $desktop-l-width: 1440px; // Extra large devices
 
 // Container mixin
 @mixin container {
-  // 1440 - 1919
-  width: 100%;
-  padding: 0px 30px;
-  max-width: 100%;
-  margin: 0px auto;
   display: inherit;
   flex-direction: inherit;
   justify-content: inherit;
   align-items: inherit;
+  margin: 0px auto;
+  padding: 0px 30px;
+  // 1440 - 1919
+  width: 100%;
+  max-width: 100%;
 
   @include tablet-up {
-    max-width: 960px;
     padding: 0px 30px;
+    max-width: 960px;
   }
   @include desktop-up {
-    max-width: 1024px;
     padding: 0px 150px;
+    max-width: 1024px;
   }
   @include desktop-l-up {
-    max-width: 1920px;
     padding: 0px 270px;
+    max-width: 1920px;
   }
 }

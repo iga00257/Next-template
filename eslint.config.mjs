@@ -1,55 +1,39 @@
-import eslint from '@eslint/js'
-import nextPlugin from '@next/eslint-plugin-next'
-import prettierPlugin from 'eslint-plugin-prettier/recommended'
-import tsEslint from 'typescript-eslint'
+import eslintReact from '@eslint-react/eslint-plugin';
+import eslint from '@eslint/js';
+import nextPlugin from '@next/eslint-plugin-next';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tsEslint from 'typescript-eslint';
 
-const config = [
-  // Base configurations
-  eslint.configs.recommended,
-  tsEslint.configs.recommended,
-  prettierPlugin,
-
-  // Next.js specific configuration
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    plugins: {
-      '@next/next': nextPlugin,
-    },
-    rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-        },
-      ],
-      'react/react-in-jsx-scope': 'off',
-      'react/display-name': 'off',
-      '@typescript-eslint/no-var-requires': 'off',
-      'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
-      '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
-      'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-      '@typescript-eslint/no-explicit-any': 'warn',
+export default tsEslint.config({
+  files: ['**/*.ts', '**/*.tsx'],
+  extends: [
+    eslint.configs.recommended,
+    tsEslint.configs.recommended,
+    eslintReact.configs['recommended-typescript'],
+    reactRefresh.configs.recommended,
+    reactRefresh.configs.vite,
+    reactHooks.configs['recommended-latest'],
+    jsxA11y.flatConfigs.recommended,
+    pluginQuery.configs['flat/recommended'],
+    eslintConfigPrettier,
+  ],
+  plugins: {
+    '@next/next': nextPlugin,
+  },
+  languageOptions: {
+    parser: tsEslint.parser,
+    parserOptions: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
     },
   },
-
-  // JavaScript specific configuration
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    rules: {
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
-    },
+  rules: {
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@next/next/no-html-link-for-pages': 'error',
+    'react-refresh/only-export-components': 'off',
   },
-
-  // next-i18next.config.js specific configuration
-  {
-    files: ['next-i18next.config.js'],
-    rules: {
-      '@typescript-eslint/no-require-imports': 'off',
-    },
-  },
-]
-
-export default config
+});
